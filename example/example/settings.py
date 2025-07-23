@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Custom app for Mappls widget
     'mappls_map_widget',
+    'hello',
 ]
 
 MIDDLEWARE = [
