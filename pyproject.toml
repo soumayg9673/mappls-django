@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mappls-map-widget"
-version = "0.1.0"
+version = "0.1.1"
 description = "Mappls Map Widget for Django"
 authors = [
     { name = "Soumay Gupta", email = "pmrs9673@gmail.com" }
