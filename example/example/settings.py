@@ -1,9 +1,13 @@
 from pathlib import Path
-import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-qf6o8x90==$q$f%ut-lv5b7nval$e$^6u&2sid8jj+q=x5(a*w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -21,8 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Custom app for Mappls widget
-    'mappls_map_widget',
+    # Custom app
     'hello',
 ]
 
