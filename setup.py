@@ -10,7 +10,7 @@ setup(
     author_email="pmrs9673@gmail.com",
     url="https://github.com/soumayg9673/mappls-django",
     license="MIT",
-    packages=find_packages(),
+    packages=find_packages(include=["mappls_map_widget", "mappls_map_widget.*"]),
     include_package_data=True,
     install_requires=[
         "Django>=3.2",
