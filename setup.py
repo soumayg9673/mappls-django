@@ -15,11 +15,5 @@ setup(
     install_requires=[
         "Django>=3.2",
     ],
-    classifiers=[
-        "Framework :: Django",
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
     python_requires=">=3.7",
 )

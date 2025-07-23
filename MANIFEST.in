@@ -1,5 +1,4 @@
 include README.md
 include LICENSE
 recursive-include mappls_map_widget/templates *.html
-recursive-include mappls_map_widget/static *
 recursive-include mappls_map_widget
