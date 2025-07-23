@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="mappls-django",
+    name="mappls-map-widget",
     version="0.1.0",
     description="Mappls Map Widget for Django",
     long_description=open("README.md").read(),
