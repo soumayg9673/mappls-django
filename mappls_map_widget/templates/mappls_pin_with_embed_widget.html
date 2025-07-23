@@ -1,0 +1,45 @@
+<div style="width:100%; height: 450px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+    <!-- Render the CharField input -->
+    {{ widget.input|safe }}
+
+    <div id="map-container" style="margin-top: 15px;">
+        {% if widget.value %}
+            <iframe id="mappls-map-frame" class="rounded-xl" style="width: 100%; height: 400px; border: 0;"
+                src="https://embed.mappls.com/place/{{ widget.value }}?zoom={{ zoom }}&pitch={{ pitch }}"
+                loading="lazy" allowfullscreen></iframe>
+        {% else %}
+            <div id="mappls-placeholder" class="rounded-xl flex items-center justify-center text-center text-gray-600"
+                style="width: 100%; height: 300px; border: 2px dashed #ccc;">
+                <p style="margin: auto; font-size: 16px;">Enter Mappls PIN to preview the location</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const input = document.querySelector("input[name='{{ widget.name }}']");
+        const container = document.getElementById("map-container");
+
+        function updateMap(pin) {
+            if (pin.trim()) {
+                container.innerHTML = `
+                    <iframe id="mappls-map-frame" class="rounded-xl" style="width: 100%; height: 400px; border: 0;"
+                        src="https://embed.mappls.com/place/${pin.trim()}?zoom={{ zoom }}&pitch={{ pitch }}"
+                        loading="lazy" allowfullscreen></iframe>`;
+            } else {
+                container.innerHTML = `
+                    <div id="mappls-placeholder" class="rounded-xl flex items-center justify-center text-center text-gray-600"
+                        style="width: 100%; height: 300px; border: 2px dashed #ccc;">
+                        <p style="margin: auto; font-size: 16px;">Enter Mappls PIN to preview the location</p>
+                    </div>`;
+            }
+        }
+
+        input.addEventListener("input", function () {
+            updateMap(input.value);
+        });
+
+        updateMap(input.value);
+    });
+</script>
